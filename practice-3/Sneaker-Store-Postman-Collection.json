@@ -1,0 +1,57 @@
+{
+  "info": {
+    "name": "Sneaker Store API",
+    "description": "Практика 3 — Тестирование CRUD API магазина кроссовок",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 GET All Sneakers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:3000/sneakers", "host": ["localhost"], "port": "3000", "path": ["sneakers"] }
+      }
+    },
+    {
+      "name": "02 POST New Sneaker",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"New Balance 574\",\n  \"price\": 12990,\n  \"description\": \"Классические повседневные кроссовки\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/sneakers", "host": ["localhost"], "port": "3000", "path": ["sneakers"] }
+      }
+    },
+    {
+      "name": "03 GET Sneaker by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:3000/sneakers/1", "host": ["localhost"], "port": "3000", "path": ["sneakers", "1"] }
+      }
+    },
+    {
+      "name": "04 PATCH Update Sneaker",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": 9990,\n  \"description\": \"Обновлённая цена\"\n}"
+        },
+        "url": { "raw": "http://localhost:3000/sneakers/1", "host": ["localhost"], "port": "3000", "path": ["sneakers", "1"] }
+      }
+    },
+    {
+      "name": "05 DELETE Sneaker",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": { "raw": "http://localhost:3000/sneakers/1", "host": ["localhost"], "port": "3000", "path": ["sneakers", "1"] }
+      }
+    }
+  ]
+}
