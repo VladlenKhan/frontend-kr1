@@ -1,0 +1,13 @@
+{
+  "name": "sneaker-store-api",
+  "version": "1.0.0",
+  "description": "Практика 2 — Express API для магазина кроссовок",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
