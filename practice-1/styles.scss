@@ -1,0 +1,106 @@
+// ========== ПЕРЕМЕННЫЕ ==========
+$primary: #e63939;
+$dark-bg: #1a1a1a;
+$light-bg: #f8f9fa;
+$text-light: #ffffff;
+$text-dark: #222222;
+$font-size-base: 16px;
+
+// ========== МИКСИНЫ ==========
+@mixin button($bg-color) {
+    display: inline-block;
+    padding: 12px 24px;
+    background: $bg-color;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba($bg-color, 0.3);
+    }
+}
+
+// ========== ОСНОВНЫЕ СТИЛИ ==========
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: $light-bg;
+    color: $text-dark;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+// Условная тёмная тема
+$theme: dark; // ← поменяй на light чтобы увидеть светлую
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: if($theme == dark, $text-light, $text-dark);
+}
+
+// Карточка товара
+.sneaker-card {
+    background: if($theme == dark, $dark-bg, white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    max-width: 380px;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__title {
+        font-size: 24px;
+        margin: 0 0 8px 0;
+        color: if($theme == dark, $text-light, $text-dark);
+    }
+
+    &__desc {
+        color: if($theme == dark, #aaa, #666);
+        margin-bottom: 12px;
+    }
+
+    &__price {
+        font-size: 22px;
+        font-weight: bold;
+        color: $primary;
+        margin-bottom: 16px;
+    }
+
+    // Модификатор с акцентной рамкой
+    &--accent {
+        border: 3px solid $primary;
+    }
+
+    // Вложенный селектор для кнопки
+    .btn {
+        @include button($primary);
+    }
+}
+ 
+@if $theme == dark {
+    body {
+        background: #111;
+    }
+}
