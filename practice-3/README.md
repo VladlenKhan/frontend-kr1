@@ -8,6 +8,16 @@
 - Протестированы: GET, POST, GET/:id, PATCH, DELETE
 - JSON-ответы соответствуют структуре из занятия
 
+**Файлы:**
+- `Sneaker-Store-Postman-Collection.json` — готовая коллекция
+- `screenshots/` — 5 скриншотов результатов запросов
+
+**Использованные возможности:**
+- Работа с JSON-структурой товаров
+- Тестирование GET, POST, PATCH, DELETE
+- Проверка статус-кодов и тела ответа
+
+
 **Как проверить:**
 1. Запустить сервер из `practice-2` (`npm start`)
 2. Открыть Postman → Import → выбрать файл `Sneaker-Store-Postman-Collection.json`
